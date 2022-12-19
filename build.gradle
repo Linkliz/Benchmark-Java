@@ -1,0 +1,26 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.6'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'me.champeau.jmh' version '0.6.6'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.openjdk.jmh:jmh-core:1.35'
+	implementation 'org.openjdk.jmh:jmh-generator-annprocess:1.35'
+	annotationProcessor  'org.openjdk.jmh:jmh-generator-annprocess:1.35'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
